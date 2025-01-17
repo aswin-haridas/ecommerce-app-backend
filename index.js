@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 
 const app = express()
 const cartRoute = require("./routes/cart.js")
+const productRoute = require("./routes/product.js")
 const paymentRoute = require("./routes/stripe.js")
 
 const PORT = process.env.PORT || 3000
@@ -16,6 +17,7 @@ app.use(cors())
 
 app.use('/api/carts', cartRoute);
 app.use('/api/checkout', paymentRoute)
+app.use('/api/products', productRoute);
 
 mongoose
     .connect(process.env.MONGO_URL)
