@@ -8,7 +8,6 @@ const cartRoute = require("./routes/cart.js");
 const productRoute = require("./routes/product.js");
 const paymentRoute = require("./routes/stripe.js");
 const authRoutes = require("./routes/auth.js");
-const wishlistRoute = require("./routes/wishlist.js");
 
 const PORT = process.env.PORT || 3000;
 
@@ -28,7 +27,6 @@ app.use("/api/checkout", paymentRoute);
 app.use("/api/products", productRoute);
 app.use("/api/payment", paymentRoute);
 app.use("/api/auth", authRoutes);
-app.use("/api/wishlist", wishlistRoute);
 
 mongoose
   .connect(process.env.MONGO_URL)
